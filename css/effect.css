@@ -1,0 +1,79 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-font-smoothing;
+    font-size: 16px;
+}
+
+.block1,
+.block2,
+.block3 {
+    position: relative;
+    opacity: 0.85;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+    /* фиксируем картинку */
+
+    background-attachment: fixed;
+
+}
+
+
+.block1 {
+    background-image: url("../img/image (1).jpg");
+    min-height: 800px;
+}
+
+.block2 {
+    background-image: url("../img/image (2).jpg");
+    min-height: 400px;
+}
+
+.block3 {
+    background-image: url("../img/image (3).jpg");
+    min-height: 400px;
+}
+
+
+.art {
+    padding: 200px;
+    font-size: 32px;
+    color: white;
+}
+
+.parag1 {
+    padding: 50px 150px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.parag {
+    padding: 50px 150px;
+    text-align: center
+}
+
+
+@media(max-width:568px) {
+
+    .block1,
+    .block2,
+    .block3 {
+
+        background-attachment: scroll;
+    }
+
+    .parag1 {
+        padding: 50px 15px;
+    }
+
+    .parag {
+        padding: 50px 15px;
+    }
+}
