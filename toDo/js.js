@@ -1,4 +1,6 @@
 
+
+
 var list = document.querySelector("ul");
 
 
@@ -35,7 +37,7 @@ function addItem() {
     li.appendChild(t);
 
     if (inputValue == "") {
-        alert("Нельзя ничего не делать!!!");
+        alert("Нужно ввести дело!");
     } else {
         document.getElementById("list").appendChild(li);
     }

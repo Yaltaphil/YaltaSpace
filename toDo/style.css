@@ -1,10 +1,9 @@
-
-body{
+body {
 	background-image: url('bees-busy.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	
+
 }
 
 .toDoForm {
@@ -22,11 +21,11 @@ body{
 .header {
 	text-align: center;
 	padding: 28px;
-	background-color: darkgray;		
+	background-color: darkgray;
 }
 
 .header h1 {
-	filter:drop-shadow(15px 15px 5px);
+	filter: drop-shadow(15px 15px 5px);
 }
 
 .newblock {
@@ -34,7 +33,15 @@ body{
 }
 
 #newItem {
-	width: 75%;
+	width: 70%;
+	height: 28px;
+	font-size: 20px;
+	padding: 3px;
+}
+
+#addNewItem {
+	font-size: 24px;
+
 }
 
 #list {
@@ -50,7 +57,7 @@ ul li {
 	cursor: pointer;
 	position: relative;
 	padding: 12px 8px 12px 40px;
-	transition: 0.5s;
+	transition: 1.25s;
 	user-select: none;
 }
 
@@ -66,9 +73,10 @@ ul li:hover {
 .close {
 	float: right;
 	color: red;
-}
+	font-size: 20px;
+	}
 
 .close:hover {
-	background:red;
-	color:black;
+	background: red;
+	color: black;
 }
