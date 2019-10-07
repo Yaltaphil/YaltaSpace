@@ -49,8 +49,10 @@ body {
 	padding-bottom: 16px;
 	border-radius: 16px;
 	border-style: 3px solid black;
+}
 
-
+#addNewItem:hover {
+	background-color: rgb(166, 224, 131);
 }
 
 #list {
@@ -72,7 +74,7 @@ ul li {
 }
 
 ul li:hover {
-	background: grey;
+	background: grey;	
 }
 
 .checked {
@@ -83,11 +85,12 @@ ul li:hover {
 
 .close {
 	float: right;
-	color: red;
+	color: rgb(238, 97, 121);
 	font-size: 20px;
 }
 
 .close:hover {
-	background: red;
 	color: black;
+	font-weight: bold;
+	transition: 2s;	
 }
