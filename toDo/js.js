@@ -1,10 +1,11 @@
 
 
-
 var list = document.querySelector("ul");
 
 
 var toDo;
+
+//Записыват список во временное хранилище браузера
 function Store() {
     toDo = list.innerHTML;
     localStorage.setItem('toDo', toDo);
@@ -14,6 +15,7 @@ function Store() {
 list.addEventListener('click', processItem);
 
 
+//Обработка клика на элементе (смена статуса или удаление)
 function processItem(listElement) {
 
     if (listElement.target.tagName === 'LI') {
@@ -26,6 +28,7 @@ function processItem(listElement) {
         Store();
     }
 }
+
 
 
 function addItem() {
@@ -41,6 +44,7 @@ function addItem() {
     } else {
         document.getElementById("list").appendChild(li);
     }
+
     document.getElementById('newItem').value = "";
 
     var span = document.createElement('SPAN'),
@@ -53,72 +57,7 @@ function addItem() {
 }
 
 
+//Если есть сохраненные задачи - загрузить
 if (localStorage.getItem('toDo')) {
     list.innerHTML = localStorage.getItem('toDo');
 }
-
-
-
-
-
-// var list = [],
-//     listdiv = document.getElementById("list"),
-//     newItem = document.getElementById("newItem");
-
-
-// function addItem() {
-
-//     var item = {
-//         task: "",
-//         done: false
-//     };
-
-//     item.task = newItem.value;
-//     item.done = false;
-
-//     list.push(item);
-
-//     newItem.value = "";
-//     showList();
-// }
-
-
-// function taskDone(n) {
-//     list[n].done = true;
-// }
-
-// function taskUnDone(n) {
-//     list[n].done = false;
-// }
-
-
-// function showList() {
-//     clearList();
-//     list.forEach(function show(next, i, arr) {
-//         var d = document.createElement('span');
-//         listdiv.appendChild(d);
-//         d.innerHTML = '<input type="checkbox" class=”check"></input>' + list[i].task + "</br>";
-//     });
-// }
-
-
-// function clearList() {
-//     listdiv.innerHTML = "";
-// }
-
-
-// function updateStatus() {
-//     // var checkboxes = document.querySelectorAll(".check");
-//     // console.log(checkboxes);
-//     // checkboxes.forEach( (next, i) => {
-//     //     next.checked ? taskDone(i) : taskUnDone(i);
-//     //     console.log(list[i].task, list[i].done);
-//     // });
-//     var checkboxes = document.getElementsByClassName("check");
-//     console.log(checkboxes);
-//     for (var i = 0; i < list.length; i++) {
-
-//         checkboxes[i].checked ? taskDone(i) : taskUnDone(i);
-//         console.log(checkboxes[i]);
-//     }
-// }
