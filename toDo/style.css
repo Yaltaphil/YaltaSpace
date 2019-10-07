@@ -1,4 +1,12 @@
 body {
+	/* color scheme  */
+	--fontSize: 18px;
+	--fontColor: rgba(20, 4, 4, 0.685);
+	--backColor: rgb(59, 159, 199);
+	--listColor: rgb(236, 236, 112);
+	--hoverColor: rgb(37, 233, 63);
+
+	/* bees */
 	background-image: url('bees-busy.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -11,9 +19,9 @@ body {
 	margin: 40px auto;
 	width: 640px;
 	height: 800px;
-	background-color: grey;
-	border: 3px solid black;
-	font-size: 18px;
+	background-color: var(--backColor);
+	border: 3px solid var(--fontColor);
+	font-size: var(--fontSize);
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	opacity: 0.9;
 
@@ -22,7 +30,7 @@ body {
 .header {
 	text-align: center;
 	padding: 28px;
-	background-color: darkgray;
+	background-color: var(--backColor);
 }
 
 .header h1 {
@@ -48,15 +56,15 @@ body {
 	padding-top: 16px;
 	padding-bottom: 16px;
 	border-radius: 16px;
-	border-style: 3px solid black;
+	border-style: 3px solid;
 }
 
 #addNewItem:hover {
-	background-color: rgb(166, 224, 131);
+	background-color: var(--hoverColor);
 }
 
 #list {
-	background-color: beige;
+	background-color: var(--listColor);
 }
 
 ul {
@@ -74,7 +82,7 @@ ul li {
 }
 
 ul li:hover {
-	background: grey;	
+	background: var(--hoverColor);
 }
 
 .checked {
@@ -92,5 +100,5 @@ ul li:hover {
 .close:hover {
 	color: black;
 	font-weight: bold;
-	transition: 2s;	
+	transition: 2s;
 }
