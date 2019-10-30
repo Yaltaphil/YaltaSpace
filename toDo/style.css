@@ -2,9 +2,9 @@ body {
 	/* color scheme  */
 	--fontSize: 18px;
 	--fontColor: rgba(20, 4, 4, 0.685);
-	--backColor: rgb(59, 159, 199);
-	--listColor: rgb(236, 236, 112);
-	--hoverColor: rgb(37, 233, 63);
+	--backColor: rgb(114, 189, 219);
+	--listColor: rgb(248, 248, 153);
+	--hoverColor: rgb(98, 243, 188);
 
 	/* bees */
 	background-image: url('bees-busy.jpg');

@@ -61,3 +61,11 @@ function addItem() {
 if (localStorage.getItem('toDo')) {
     list.innerHTML = localStorage.getItem('toDo');
 }
+
+//ввод в помощью Enter
+document.addEventListener('keypress',
+    function (event) {
+        if (event.keyCode === 13 || event.which === 13) {
+            addItem();
+        }
+    });
