@@ -22,6 +22,7 @@ body {
   font-size: var(--fontSize);
   font-family: Georgia, "Times New Roman", Times, serif;
   opacity: 0.85;
+  overflow: auto;
 }
 
 .toDoForm p {
