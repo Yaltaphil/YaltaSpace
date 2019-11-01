@@ -1,10 +1,10 @@
 body {
   /* color scheme  */
   --fontSize: 18px;
-  --fontColor: rgba(20, 4, 4, 0.685);
-  --backColor: rgb(114, 189, 219);
-  --listColor: rgb(248, 248, 153);
-  --hoverColor: rgb(98, 243, 188);
+  --fontColor: rgb(0, 7, 7);
+  --backColor: rgb(209, 170, 112);
+  --listColor: rgb(240, 144, 20);
+  --hoverColor: rgb(165, 89, 27);
 
   /* bees */
   background-image: url("bees-busy.jpg");
@@ -17,6 +17,7 @@ body {
   margin: 40px auto;
   width: 80vw;
   height: 80vh;
+  color: var(--fontColor);
   background-color: var(--backColor);
   border: 3px solid var(--fontColor);
   font-size: var(--fontSize);
@@ -94,7 +95,7 @@ ul li:hover {
 
 .close {
   float: right;
-  color: rgb(238, 97, 121);
+  color: rgb(245, 11, 11);
   font-size: 20px;
 }
 
