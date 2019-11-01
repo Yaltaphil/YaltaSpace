@@ -4,7 +4,7 @@ html {
   margin: 0;
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .block1,
@@ -16,6 +16,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  min-height: 500px;
 
   /* фиксируем картинку */
   background-attachment: fixed;
@@ -23,34 +24,31 @@ html {
 
 .block1 {
   background-image: url("../img/image (1).jpg");
-  min-height: 700px;
 }
 
 .block2 {
   background-image: url("../img/image (2).jpg");
-  min-height: 500px;
 }
 
 .block3 {
   background-image: url("../img/image (3).jpg");
-  min-height: 500px;
 }
 
 .art {
-  padding: 120px;
+  padding: 20%;
   color: white;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .parag1 {
-  padding: 50px 120px;
+  padding: 20% 15%;
   text-align: center;
   color: white;
 }
 
 .parag {
-  padding: 50px 150px;
+  padding: 10% 10%;
   text-align: center;
 }
 
@@ -59,7 +57,7 @@ a {
 }
 
 a:visited {
-  color:  rgb(245, 190, 8);
+  color: rgb(245, 190, 8);
 }
 
 @media (max-width: 568px) {
@@ -67,13 +65,5 @@ a:visited {
   .block2,
   .block3 {
     background-attachment: scroll;
-  }
-
-  .parag1 {
-    padding: 50px 15px;
-  }
-
-  .parag {
-    padding: 50px 15px;
   }
 }
