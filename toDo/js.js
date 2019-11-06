@@ -1,45 +1,41 @@
 
-const
-    list = document.querySelector("ul"),
+const list = document.querySelector("ul"),
     inputField = document.getElementById("newItem");
 
-var
-    toDo;
+var toDoListContainer;
 
-
-//Записыват список во временное хранилище браузера
-function Store() {
-    toDo = list.innerHTML;
-    localStorage.setItem('toDoList', toDo);
+function storeToLocal() {
+    toDoListContainer = list.innerHTML;
+    localStorage.setItem('toDoList', toDoListContainer);
 }
 
 //Обработка клика на элементе (смена статуса или удаление)
 function processItem(listElement) {
     if (listElement.target.tagName === 'LI') {
         listElement.target.classList.toggle('checked');
-        Store();
+        storeToLocal();
     }
     else if (listElement.target.tagName === 'SPAN') {
         listElement.target.parentNode.remove();
-        Store();
+        storeToLocal();
     }
 }
 
-function addItem() {
+function addListItem() {
     if (inputField.value === "") {
         inputField.style.transform = "rotateY(360deg)";
     } else {
-        let li = document.createElement('li'),
+        let listElement = document.createElement('li'),
             textNode = document.createTextNode(inputField.value);
-        li.appendChild(textNode);
-        document.getElementById("list").appendChild(li);
-        let span = document.createElement('SPAN'),
-            txt = document.createTextNode('X');
-        span.className = 'close';
-        span.appendChild(txt);
-        li.appendChild(span);
+        listElement.appendChild(textNode);
+        document.getElementById("list").appendChild(listElement);
+        let spanBlock = document.createElement('SPAN'),
+            textBlock = document.createTextNode('X');
+        spanBlock.className = 'close';
+        spanBlock.appendChild(textBlock);
+        listElement.appendChild(spanBlock);
         inputField.value = "";
-        Store();
+        storeToLocal();
     }
 }
 
@@ -48,14 +44,12 @@ if (localStorage.getItem('toDoList')) {
     list.innerHTML = localStorage.getItem('toDoList');
 }
 
-
 list.addEventListener('click', processItem);
-
 
 //ввод в помощью Enter
 document.addEventListener('keypress',
     function (event) {
         if (event.keyCode === 13 || event.which === 13) {
-            addItem();
+            addListItem();
         }
     });
