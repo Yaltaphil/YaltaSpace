@@ -24,6 +24,12 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
   opacity: 0.85;
   overflow: auto;
+  background: linear-gradient(
+    135deg,
+    var(--backColor) 25%,
+    rgba(226, 92, 38, 0.788) 50%,
+    var(--backColor) 75%
+  );
 }
 
 .toDoForm p {
@@ -34,7 +40,7 @@ body {
 .header {
   text-align: center;
   padding: 28px 16px 2px;
-  background-color: var(--backColor);
+  /* background-color: var(--backColor); */
 }
 
 .header h2 {
@@ -46,7 +52,7 @@ body {
 }
 
 #newItem {
-  transition: 1s;
+  transition: .75s;
   width: 70%;
   height: 28px;
   font-size: 20px;
