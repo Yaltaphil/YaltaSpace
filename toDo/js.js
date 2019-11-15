@@ -39,6 +39,7 @@ function addListItem() {
         listElement.appendChild(spanBlock);
         inputField.value = "";
         storeToLocal();
+        inputField.focus();
     }
 }
 
