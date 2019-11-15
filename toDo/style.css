@@ -25,7 +25,7 @@ body {
   opacity: 0.85;
   overflow: auto;
   background: linear-gradient(
-    135deg,
+    125deg,
     var(--backColor) 25%,
     rgba(226, 92, 38, 0.788) 50%,
     var(--backColor) 75%

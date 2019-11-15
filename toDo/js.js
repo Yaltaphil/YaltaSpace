@@ -1,6 +1,7 @@
 
 const list = document.querySelector("ul"),
-    inputField = document.getElementById("newItem");
+    inputField = document.getElementById("newItem"),
+    addButton = document.querySelector("#addNewItem");
 
 var toDoListContainer;
 
@@ -23,7 +24,9 @@ function processItem(listElement) {
 
 function addListItem() {
     if (inputField.value === "") {
-        inputField.style.transform = "rotateY(360deg)";
+        inputField.style.transform = "scale(1.02,2)";
+        setTimeout(() => inputField.style.transform = "none", 750);
+
     } else {
         let listElement = document.createElement('li'),
             textNode = document.createTextNode(inputField.value);
@@ -53,3 +56,5 @@ document.addEventListener('keypress',
             addListItem();
         }
     });
+
+addButton.addEventListener('click', addListItem);
