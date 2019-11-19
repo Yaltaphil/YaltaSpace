@@ -1,4 +1,3 @@
-
 const list = document.querySelector("ul"),
     inputField = document.getElementById("newItem"),
     addButton = document.querySelector("#addNewItem");
@@ -24,8 +23,8 @@ function processItem(listElement) {
 
 function addListItem() {
     if (inputField.value === "") {
-        inputField.style.transform = "scale(1.02,2)";
-        setTimeout(() => inputField.style.transform = "none", 750);
+        inputField.style.transform = "scale(1.02,1.5)";
+        setTimeout(() => inputField.style.transform = "none", 500);
 
     } else {
         let listElement = document.createElement('li'),
@@ -43,14 +42,10 @@ function addListItem() {
     }
 }
 
-//Если есть сохраненные задачи - загрузить
 if (localStorage.getItem('toDoList')) {
     list.innerHTML = localStorage.getItem('toDoList');
 }
 
-list.addEventListener('click', processItem);
-
-//ввод в помощью Enter
 document.addEventListener('keypress',
     function (event) {
         if (event.keyCode === 13 || event.which === 13) {
@@ -58,4 +53,5 @@ document.addEventListener('keypress',
         }
     });
 
+list.addEventListener('click', processItem);
 addButton.addEventListener('click', addListItem);
