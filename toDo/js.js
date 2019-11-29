@@ -21,8 +21,18 @@ function processItem(listElement) {
 }
 
 function addItem() {
-    if (inputIsNotEmpty()) insertNewItem();
-    else flashInputField();
+    if (inputIsEmpty()) flashInputField();
+    else insertNewItem();
+
+    function inputIsEmpty() {
+        if (inputField.value === "") return true;
+        return false;
+    }
+
+    function flashInputField() {
+        inputField.style.transform = "scale(1.03,1.25)";
+        setTimeout(() => inputField.style.transform = "none", 500);
+    }
 
     function insertNewItem() {
         let listElement = document.createElement('li'), textNode = document.createTextNode(inputField.value);
@@ -36,18 +46,7 @@ function addItem() {
         storeToLocal();
         inputField.focus();
     }
-
-    function inputIsNotEmpty() {
-        if (inputField.value === "") return false;
-        return true;
-    }
-
-    function flashInputField() {
-        inputField.style.transform = "scale(1.03,1.25)";
-        setTimeout(() => inputField.style.transform = "none", 500);
-    }
 }
-
 
 if (localStorage.getItem('toDoList')) {
     list.innerHTML = localStorage.getItem('toDoList');
