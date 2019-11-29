@@ -22,17 +22,13 @@ function processItem(listElement) {
 }
 
 function addListItem() {
-    if (inputField.value === "") {
-        inputField.style.transform = "scale(1.02,1.5)";
-        setTimeout(() => inputField.style.transform = "none", 500);
-
-    } else {
+    if (inputIsValid()) {
         let listElement = document.createElement('li'),
             textNode = document.createTextNode(inputField.value);
         listElement.appendChild(textNode);
         document.getElementById("list").appendChild(listElement);
         let spanBlock = document.createElement('SPAN'),
-            textBlock = document.createTextNode('X');
+            textBlock = document.createTextNode('🗙');
         spanBlock.className = 'close';
         spanBlock.appendChild(textBlock);
         listElement.appendChild(spanBlock);
@@ -40,6 +36,15 @@ function addListItem() {
         storeToLocal();
         inputField.focus();
     }
+}
+
+function inputIsValid() {
+    if (inputField.value === "") {
+        inputField.style.transform = "scale(1.03,1.25)";
+        setTimeout(() => inputField.style.transform = "none", 500);
+        return false;
+    }
+    return true;
 }
 
 if (localStorage.getItem('toDoList')) {
