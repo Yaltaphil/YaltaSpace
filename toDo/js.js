@@ -9,7 +9,6 @@ function storeToLocal() {
     localStorage.setItem('toDoList', toDoListContainer);
 }
 
-//Обработка клика на элементе (смена статуса или удаление)
 function processItem(listElement) {
     if (listElement.target.tagName === 'LI') {
         listElement.target.classList.toggle('checked');
@@ -21,14 +20,15 @@ function processItem(listElement) {
     }
 }
 
-function addListItem() {
-    if (inputIsValid()) {
-        let listElement = document.createElement('li'),
-            textNode = document.createTextNode(inputField.value);
+function addItem() {
+    if (inputIsNotEmpty()) insertNewItem();
+    else flashInputField();
+
+    function insertNewItem() {
+        let listElement = document.createElement('li'), textNode = document.createTextNode(inputField.value);
         listElement.appendChild(textNode);
         document.getElementById("list").appendChild(listElement);
-        let spanBlock = document.createElement('SPAN'),
-            textBlock = document.createTextNode('🗙');
+        let spanBlock = document.createElement('SPAN'), textBlock = document.createTextNode('🗙');
         spanBlock.className = 'close';
         spanBlock.appendChild(textBlock);
         listElement.appendChild(spanBlock);
@@ -36,16 +36,18 @@ function addListItem() {
         storeToLocal();
         inputField.focus();
     }
-}
 
-function inputIsValid() {
-    if (inputField.value === "") {
+    function inputIsNotEmpty() {
+        if (inputField.value === "") return false;
+        return true;
+    }
+
+    function flashInputField() {
         inputField.style.transform = "scale(1.03,1.25)";
         setTimeout(() => inputField.style.transform = "none", 500);
-        return false;
     }
-    return true;
 }
+
 
 if (localStorage.getItem('toDoList')) {
     list.innerHTML = localStorage.getItem('toDoList');
@@ -54,9 +56,9 @@ if (localStorage.getItem('toDoList')) {
 document.addEventListener('keypress',
     function (event) {
         if (event.keyCode === 13 || event.which === 13) {
-            addListItem();
+            addItem();
         }
     });
 
 list.addEventListener('click', processItem);
-addButton.addEventListener('click', addListItem);
+addButton.addEventListener('click', addItem);
