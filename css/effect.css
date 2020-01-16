@@ -6,6 +6,7 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
   /* scroll-snap-type: y proximity; */
+  scroll-behavior: smooth;
 }
 
 .block1,
