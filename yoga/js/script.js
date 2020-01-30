@@ -1,4 +1,3 @@
-
 import {initTabs} from './tabs.js';
 
 
