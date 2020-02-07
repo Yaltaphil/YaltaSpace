@@ -5,7 +5,7 @@ html {
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
-  /* scroll-snap-type: y proximity; */
+  scroll-snap-type: block mandatory;
   scroll-behavior: smooth;
 }
 
@@ -69,5 +69,6 @@ a:visited {
   .block2,
   .block3 {
     background-attachment: scroll;
+    scroll-snap-type: block mandatory;
   }
 }

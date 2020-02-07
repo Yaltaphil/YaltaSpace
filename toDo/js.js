@@ -35,10 +35,12 @@ function addItem() {
     }
 
     function insertNewItem() {
-        let listElement = document.createElement('li'), textNode = document.createTextNode(inputField.value);
+        let listElement = document.createElement('li'), 
+        textNode = document.createTextNode(inputField.value);
         listElement.appendChild(textNode);
         document.getElementById("list").appendChild(listElement);
-        let spanBlock = document.createElement('SPAN'), textBlock = document.createTextNode('🗙');
+        let spanBlock = document.createElement('SPAN'), 
+         textBlock = document.createTextNode(`удалить`);
         spanBlock.className = 'close';
         spanBlock.appendChild(textBlock);
         listElement.appendChild(spanBlock);
